@@ -1,0 +1,447 @@
+sqlbox_sqlite3.o: sqlbox_sqlite3.c \
+ /usr/local/include/kannel/gwlib/gwlib.h /usr/include/stdlib.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/sys/types.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/time.h /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/string.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h /usr/local/include/kannel/gw-config.h \
+ /usr/local/include/kannel/gwlib/gw-getopt.h /usr/include/getopt.h \
+ /usr/local/include/kannel/gwlib/gwpoll.h /usr/include/sys/poll.h \
+ /usr/include/bits/poll.h /usr/local/include/kannel/gwlib/utils.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/local/include/kannel/gwlib/octstr.h \
+ /usr/local/include/kannel/gwlib/list.h /usr/include/termios.h \
+ /usr/include/bits/termios.h /usr/include/sys/ttydefaults.h \
+ /usr/local/include/kannel/gwlib/log.h \
+ /usr/local/include/kannel/gwlib/thread.h /usr/include/pthread.h \
+ /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/setjmp.h /usr/local/include/kannel/gwlib/gwthread.h \
+ /usr/local/include/kannel/gwlib/gwmem.h \
+ /usr/local/include/kannel/gwlib/socket.h /usr/include/netinet/in.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/in.h /usr/include/netinet/tcp.h \
+ /usr/local/include/kannel/gwlib/cfg.h \
+ /usr/local/include/kannel/gwlib/date.h \
+ /usr/local/include/kannel/gwlib/gwlib.h \
+ /usr/local/include/kannel/gwlib/http.h \
+ /usr/local/include/kannel/gwlib/list.h \
+ /usr/local/include/kannel/gwlib/octstr.h \
+ /usr/local/include/kannel/gwlib/fdset.h \
+ /usr/local/include/kannel/gwlib/gwassert.h \
+ /usr/local/include/kannel/gwlib/counter.h \
+ /usr/local/include/kannel/gwlib/charset.h \
+ /usr/include/libxml2/libxml/encoding.h \
+ /usr/include/libxml2/libxml/xmlversion.h \
+ /usr/include/libxml2/libxml/xmlexports.h /usr/include/iconv.h \
+ /usr/include/libxml2/libxml/tree.h \
+ /usr/include/libxml2/libxml/xmlstring.h \
+ /usr/include/libxml2/libxml/xmlregexp.h \
+ /usr/include/libxml2/libxml/dict.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/libxml2/libxml/xmlmemory.h \
+ /usr/include/libxml2/libxml/threads.h \
+ /usr/include/libxml2/libxml/globals.h \
+ /usr/include/libxml2/libxml/parser.h /usr/include/libxml2/libxml/hash.h \
+ /usr/include/libxml2/libxml/valid.h \
+ /usr/include/libxml2/libxml/xmlerror.h \
+ /usr/include/libxml2/libxml/list.h \
+ /usr/include/libxml2/libxml/xmlautomata.h \
+ /usr/include/libxml2/libxml/entities.h \
+ /usr/include/libxml2/libxml/xmlIO.h /usr/include/libxml2/libxml/SAX.h \
+ /usr/include/libxml2/libxml/xlink.h /usr/include/libxml2/libxml/SAX2.h \
+ /usr/local/include/kannel/gwlib/conn.h /usr/include/openssl/x509.h \
+ /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+ /usr/include/openssl/opensslconf-x86_64.h \
+ /usr/include/openssl/symhacks.h /usr/include/openssl/buffer.h \
+ /usr/include/openssl/ossl_typ.h /usr/include/openssl/evp.h \
+ /usr/include/openssl/bio.h /usr/include/openssl/crypto.h \
+ /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
+ /usr/include/openssl/opensslv.h /usr/include/openssl/fips.h \
+ /usr/include/openssl/objects.h /usr/include/openssl/obj_mac.h \
+ /usr/include/openssl/asn1.h /usr/include/openssl/bn.h \
+ /usr/include/openssl/ec.h /usr/include/openssl/ecdsa.h \
+ /usr/include/openssl/ecdh.h /usr/include/openssl/rsa.h \
+ /usr/include/openssl/dsa.h /usr/include/openssl/dh.h \
+ /usr/include/openssl/sha.h /usr/include/openssl/x509_vfy.h \
+ /usr/include/openssl/lhash.h /usr/include/openssl/pkcs7.h \
+ /usr/include/openssl/ssl.h /usr/include/openssl/comp.h \
+ /usr/include/openssl/pem.h /usr/include/openssl/pem2.h \
+ /usr/include/openssl/hmac.h /usr/include/openssl/kssl.h \
+ /usr/include/ctype.h /usr/include/krb5.h /usr/include/krb5/krb5.h \
+ /usr/include/et/com_err.h /usr/include/openssl/ssl2.h \
+ /usr/include/openssl/ssl3.h /usr/include/openssl/tls1.h \
+ /usr/include/openssl/dtls1.h /usr/include/openssl/pqueue.h \
+ /usr/include/sys/time.h /usr/include/openssl/ssl23.h \
+ /usr/include/openssl/srtp.h /usr/local/include/kannel/gwlib/ssl.h \
+ /usr/local/include/kannel/gwlib/parse.h \
+ /usr/local/include/kannel/gwlib/protected.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/bits/netdb.h \
+ /usr/local/include/kannel/gwlib/accesslog.h \
+ /usr/local/include/kannel/gwlib/dict.h \
+ /usr/local/include/kannel/gwlib/semaphore.h \
+ /usr/local/include/kannel/gwlib/xmlrpc.h \
+ /usr/local/include/kannel/gwlib/md5.h \
+ /usr/local/include/kannel/gwlib/gw_uuid.h \
+ /usr/local/include/kannel/gwlib/gw-rwlock.h \
+ /usr/local/include/kannel/gwlib/gw-prioqueue.h
+
+/usr/local/include/kannel/gwlib/gwlib.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/local/include/kannel/gw-config.h:
+
+/usr/local/include/kannel/gwlib/gw-getopt.h:
+
+/usr/include/getopt.h:
+
+/usr/local/include/kannel/gwlib/gwpoll.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/bits/poll.h:
+
+/usr/local/include/kannel/gwlib/utils.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/local/include/kannel/gwlib/octstr.h:
+
+/usr/local/include/kannel/gwlib/list.h:
+
+/usr/include/termios.h:
+
+/usr/include/bits/termios.h:
+
+/usr/include/sys/ttydefaults.h:
+
+/usr/local/include/kannel/gwlib/log.h:
+
+/usr/local/include/kannel/gwlib/thread.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/local/include/kannel/gwlib/gwthread.h:
+
+/usr/local/include/kannel/gwlib/gwmem.h:
+
+/usr/local/include/kannel/gwlib/socket.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/bits/in.h:
+
+/usr/include/netinet/tcp.h:
+
+/usr/local/include/kannel/gwlib/cfg.h:
+
+/usr/local/include/kannel/gwlib/date.h:
+
+/usr/local/include/kannel/gwlib/gwlib.h:
+
+/usr/local/include/kannel/gwlib/http.h:
+
+/usr/local/include/kannel/gwlib/list.h:
+
+/usr/local/include/kannel/gwlib/octstr.h:
+
+/usr/local/include/kannel/gwlib/fdset.h:
+
+/usr/local/include/kannel/gwlib/gwassert.h:
+
+/usr/local/include/kannel/gwlib/counter.h:
+
+/usr/local/include/kannel/gwlib/charset.h:
+
+/usr/include/libxml2/libxml/encoding.h:
+
+/usr/include/libxml2/libxml/xmlversion.h:
+
+/usr/include/libxml2/libxml/xmlexports.h:
+
+/usr/include/iconv.h:
+
+/usr/include/libxml2/libxml/tree.h:
+
+/usr/include/libxml2/libxml/xmlstring.h:
+
+/usr/include/libxml2/libxml/xmlregexp.h:
+
+/usr/include/libxml2/libxml/dict.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/limits.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/libxml2/libxml/xmlmemory.h:
+
+/usr/include/libxml2/libxml/threads.h:
+
+/usr/include/libxml2/libxml/globals.h:
+
+/usr/include/libxml2/libxml/parser.h:
+
+/usr/include/libxml2/libxml/hash.h:
+
+/usr/include/libxml2/libxml/valid.h:
+
+/usr/include/libxml2/libxml/xmlerror.h:
+
+/usr/include/libxml2/libxml/list.h:
+
+/usr/include/libxml2/libxml/xmlautomata.h:
+
+/usr/include/libxml2/libxml/entities.h:
+
+/usr/include/libxml2/libxml/xmlIO.h:
+
+/usr/include/libxml2/libxml/SAX.h:
+
+/usr/include/libxml2/libxml/xlink.h:
+
+/usr/include/libxml2/libxml/SAX2.h:
+
+/usr/local/include/kannel/gwlib/conn.h:
+
+/usr/include/openssl/x509.h:
+
+/usr/include/openssl/e_os2.h:
+
+/usr/include/openssl/opensslconf.h:
+
+/usr/include/openssl/opensslconf-x86_64.h:
+
+/usr/include/openssl/symhacks.h:
+
+/usr/include/openssl/buffer.h:
+
+/usr/include/openssl/ossl_typ.h:
+
+/usr/include/openssl/evp.h:
+
+/usr/include/openssl/bio.h:
+
+/usr/include/openssl/crypto.h:
+
+/usr/include/openssl/stack.h:
+
+/usr/include/openssl/safestack.h:
+
+/usr/include/openssl/opensslv.h:
+
+/usr/include/openssl/fips.h:
+
+/usr/include/openssl/objects.h:
+
+/usr/include/openssl/obj_mac.h:
+
+/usr/include/openssl/asn1.h:
+
+/usr/include/openssl/bn.h:
+
+/usr/include/openssl/ec.h:
+
+/usr/include/openssl/ecdsa.h:
+
+/usr/include/openssl/ecdh.h:
+
+/usr/include/openssl/rsa.h:
+
+/usr/include/openssl/dsa.h:
+
+/usr/include/openssl/dh.h:
+
+/usr/include/openssl/sha.h:
+
+/usr/include/openssl/x509_vfy.h:
+
+/usr/include/openssl/lhash.h:
+
+/usr/include/openssl/pkcs7.h:
+
+/usr/include/openssl/ssl.h:
+
+/usr/include/openssl/comp.h:
+
+/usr/include/openssl/pem.h:
+
+/usr/include/openssl/pem2.h:
+
+/usr/include/openssl/hmac.h:
+
+/usr/include/openssl/kssl.h:
+
+/usr/include/ctype.h:
+
+/usr/include/krb5.h:
+
+/usr/include/krb5/krb5.h:
+
+/usr/include/et/com_err.h:
+
+/usr/include/openssl/ssl2.h:
+
+/usr/include/openssl/ssl3.h:
+
+/usr/include/openssl/tls1.h:
+
+/usr/include/openssl/dtls1.h:
+
+/usr/include/openssl/pqueue.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/openssl/ssl23.h:
+
+/usr/include/openssl/srtp.h:
+
+/usr/local/include/kannel/gwlib/ssl.h:
+
+/usr/local/include/kannel/gwlib/parse.h:
+
+/usr/local/include/kannel/gwlib/protected.h:
+
+/usr/include/netdb.h:
+
+/usr/include/rpc/netdb.h:
+
+/usr/include/bits/netdb.h:
+
+/usr/local/include/kannel/gwlib/accesslog.h:
+
+/usr/local/include/kannel/gwlib/dict.h:
+
+/usr/local/include/kannel/gwlib/semaphore.h:
+
+/usr/local/include/kannel/gwlib/xmlrpc.h:
+
+/usr/local/include/kannel/gwlib/md5.h:
+
+/usr/local/include/kannel/gwlib/gw_uuid.h:
+
+/usr/local/include/kannel/gwlib/gw-rwlock.h:
+
+/usr/local/include/kannel/gwlib/gw-prioqueue.h:

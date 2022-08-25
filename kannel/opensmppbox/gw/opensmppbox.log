@@ -1,0 +1,287 @@
+2019-07-13 03:04:14 [464] [0] INFO: Added logfile `opensmppbox.log' with level `0'.
+2019-07-13 03:04:14 [464] [0] INFO: Waiting for SMPP connections on port 2346.
+2019-07-13 03:05:03 [464] [0] ERROR: SIGINT received, aborting program...
+2019-07-13 03:05:03 [464] [0] INFO: No more waiting for SMPP connections.
+2019-07-13 03:05:03 [464] [0] DEBUG: Immutable octet strings: 119.
+2019-07-13 03:06:52 [1050] [0] INFO: Added logfile `opensmppbox.log' with level `0'.
+2019-07-13 03:06:52 [1050] [0] INFO: Waiting for SMPP connections on port 2346.
+2019-07-13 03:12:41 [1050] [0] DEBUG: Started thread 1 (opensmppbox.c:function)
+2019-07-13 03:12:41 [1050] [1] DEBUG: Thread 1 (opensmppbox.c:function) maps to pid 1050.
+2019-07-13 03:12:41 [1050] [1] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:12:41 [1050] [1] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:12:41 [1050] [1] INFO: Connected to bearerbox at localhost port 18001.
+2019-07-13 03:12:41 [1050] [1] DEBUG: Started thread 2 (opensmppbox.c:smpp_to_bearerbox)
+2019-07-13 03:12:41 [1050] [2] DEBUG: Thread 2 (opensmppbox.c:smpp_to_bearerbox) maps to pid 1050.
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP[abcd]: Got PDU:
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP PDU 0x7f2540000d50 dump:
+2019-07-13 03:12:42 [1050] [2] DEBUG:   type_name: bind_transceiver
+2019-07-13 03:12:42 [1050] [2] DEBUG:   command_id: 9 = 0x00000009
+2019-07-13 03:12:42 [1050] [2] DEBUG:   command_status: 0 = 0x00000000
+2019-07-13 03:12:42 [1050] [2] DEBUG:   sequence_number: 1 = 0x00000001
+2019-07-13 03:12:42 [1050] [2] DEBUG:   system_id: "client"
+2019-07-13 03:12:42 [1050] [2] DEBUG:   password: "password"
+2019-07-13 03:12:42 [1050] [2] DEBUG:   system_type: "SMPP"
+2019-07-13 03:12:42 [1050] [2] DEBUG:   interface_version: 52 = 0x00000034
+2019-07-13 03:12:42 [1050] [2] DEBUG:   addr_ton: 0 = 0x00000000
+2019-07-13 03:12:42 [1050] [2] DEBUG:   addr_npi: 0 = 0x00000000
+2019-07-13 03:12:42 [1050] [2] DEBUG:   address_range: NULL
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP[abcd]: Sending PDU:
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP PDU 0x7f2540001050 dump:
+2019-07-13 03:12:42 [1050] [2] DEBUG:   type_name: bind_transceiver_resp
+2019-07-13 03:12:42 [1050] [2] DEBUG:   command_id: 2147483657 = 0x80000009
+2019-07-13 03:12:42 [1050] [2] DEBUG:   command_status: 13 = 0x0000000d
+2019-07-13 03:12:42 [1050] [2] DEBUG:   sequence_number: 1 = 0x00000001
+2019-07-13 03:12:42 [1050] [2] DEBUG:   system_id: NULL
+2019-07-13 03:12:42 [1050] [2] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:12:43 [1050] [2] ERROR: Invalid SMPP PDU received.
+2019-07-13 03:12:43 [1050] [2] DEBUG: Thread 2 (opensmppbox.c:smpp_to_bearerbox) terminates.
+2019-07-13 03:12:44 [1050] [1] DEBUG: Thread 1 (opensmppbox.c:function) terminates.
+2019-07-13 03:12:52 [1050] [0] DEBUG: Started thread 3 (opensmppbox.c:function)
+2019-07-13 03:12:52 [1050] [3] DEBUG: Thread 3 (opensmppbox.c:function) maps to pid 1050.
+2019-07-13 03:12:52 [1050] [3] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:12:52 [1050] [3] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:12:52 [1050] [3] INFO: Connected to bearerbox at localhost port 18001.
+2019-07-13 03:12:52 [1050] [3] DEBUG: Started thread 4 (opensmppbox.c:smpp_to_bearerbox)
+2019-07-13 03:12:52 [1050] [4] DEBUG: Thread 4 (opensmppbox.c:smpp_to_bearerbox) maps to pid 1050.
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP[abcd]: Got PDU:
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP PDU 0x7f2540000d50 dump:
+2019-07-13 03:12:52 [1050] [4] DEBUG:   type_name: bind_transceiver
+2019-07-13 03:12:52 [1050] [4] DEBUG:   command_id: 9 = 0x00000009
+2019-07-13 03:12:52 [1050] [4] DEBUG:   command_status: 0 = 0x00000000
+2019-07-13 03:12:52 [1050] [4] DEBUG:   sequence_number: 2 = 0x00000002
+2019-07-13 03:12:52 [1050] [4] DEBUG:   system_id: "client"
+2019-07-13 03:12:52 [1050] [4] DEBUG:   password: "password"
+2019-07-13 03:12:52 [1050] [4] DEBUG:   system_type: "SMPP"
+2019-07-13 03:12:52 [1050] [4] DEBUG:   interface_version: 52 = 0x00000034
+2019-07-13 03:12:52 [1050] [4] DEBUG:   addr_ton: 0 = 0x00000000
+2019-07-13 03:12:52 [1050] [4] DEBUG:   addr_npi: 0 = 0x00000000
+2019-07-13 03:12:52 [1050] [4] DEBUG:   address_range: NULL
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP[abcd]: Sending PDU:
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP PDU 0x7f2540001050 dump:
+2019-07-13 03:12:52 [1050] [4] DEBUG:   type_name: bind_transceiver_resp
+2019-07-13 03:12:52 [1050] [4] DEBUG:   command_id: 2147483657 = 0x80000009
+2019-07-13 03:12:52 [1050] [4] DEBUG:   command_status: 13 = 0x0000000d
+2019-07-13 03:12:52 [1050] [4] DEBUG:   sequence_number: 2 = 0x00000002
+2019-07-13 03:12:52 [1050] [4] DEBUG:   system_id: NULL
+2019-07-13 03:12:52 [1050] [4] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:12:53 [1050] [4] ERROR: Invalid SMPP PDU received.
+2019-07-13 03:12:53 [1050] [4] DEBUG: Thread 4 (opensmppbox.c:smpp_to_bearerbox) terminates.
+2019-07-13 03:12:54 [1050] [3] DEBUG: Thread 3 (opensmppbox.c:function) terminates.
+2019-07-13 03:13:03 [1050] [0] DEBUG: Started thread 5 (opensmppbox.c:function)
+2019-07-13 03:13:03 [1050] [5] DEBUG: Thread 5 (opensmppbox.c:function) maps to pid 1050.
+2019-07-13 03:13:03 [1050] [5] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:13:03 [1050] [5] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:13:03 [1050] [5] INFO: Connected to bearerbox at localhost port 18001.
+2019-07-13 03:13:03 [1050] [5] DEBUG: Started thread 6 (opensmppbox.c:smpp_to_bearerbox)
+2019-07-13 03:13:03 [1050] [6] DEBUG: Thread 6 (opensmppbox.c:smpp_to_bearerbox) maps to pid 1050.
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP[abcd]: Got PDU:
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP PDU 0x7f2540000d50 dump:
+2019-07-13 03:13:03 [1050] [6] DEBUG:   type_name: bind_transceiver
+2019-07-13 03:13:03 [1050] [6] DEBUG:   command_id: 9 = 0x00000009
+2019-07-13 03:13:03 [1050] [6] DEBUG:   command_status: 0 = 0x00000000
+2019-07-13 03:13:03 [1050] [6] DEBUG:   sequence_number: 3 = 0x00000003
+2019-07-13 03:13:03 [1050] [6] DEBUG:   system_id: "client"
+2019-07-13 03:13:03 [1050] [6] DEBUG:   password: "password"
+2019-07-13 03:13:03 [1050] [6] DEBUG:   system_type: "SMPP"
+2019-07-13 03:13:03 [1050] [6] DEBUG:   interface_version: 52 = 0x00000034
+2019-07-13 03:13:03 [1050] [6] DEBUG:   addr_ton: 0 = 0x00000000
+2019-07-13 03:13:03 [1050] [6] DEBUG:   addr_npi: 0 = 0x00000000
+2019-07-13 03:13:03 [1050] [6] DEBUG:   address_range: NULL
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP[abcd]: Sending PDU:
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP PDU 0x7f2540001050 dump:
+2019-07-13 03:13:03 [1050] [6] DEBUG:   type_name: bind_transceiver_resp
+2019-07-13 03:13:03 [1050] [6] DEBUG:   command_id: 2147483657 = 0x80000009
+2019-07-13 03:13:03 [1050] [6] DEBUG:   command_status: 13 = 0x0000000d
+2019-07-13 03:13:03 [1050] [6] DEBUG:   sequence_number: 3 = 0x00000003
+2019-07-13 03:13:03 [1050] [6] DEBUG:   system_id: NULL
+2019-07-13 03:13:03 [1050] [6] DEBUG: SMPP PDU dump ends.
+2019-07-13 03:13:04 [1050] [6] ERROR: Invalid SMPP PDU received.
+2019-07-13 03:13:04 [1050] [6] DEBUG: Thread 6 (opensmppbox.c:smpp_to_bearerbox) terminates.
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox() [0x46121c]
+2019-07-13 03:13:05 [1050] [5] PANIC: /lib64/libpthread.so.0(+0xf710) [0x7f254f72d710]
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox() [0x4556cb]
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox(octstr_destroy+0x1d) [0x457a5d]
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox() [0x40e0a3]
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox() [0x4108c0]
+2019-07-13 03:13:05 [1050] [5] PANIC: ./opensmppbox() [0x44bb59]
+2019-07-13 03:13:05 [1050] [5] PANIC: /lib64/libpthread.so.0(+0x79d1) [0x7f254f7259d1]
+2019-07-13 03:13:05 [1050] [5] PANIC: /lib64/libc.so.6(clone+0x6d) [0x7f254ede28fd]
+2019-07-13 03:17:13 [2942] [0] INFO: Added logfile `opensmppbox.log' with level `0'.
+2019-07-13 03:17:13 [2942] [0] INFO: Waiting for SMPP connections on port 2346.
+2019-07-13 03:17:20 [2942] [0] DEBUG: Started thread 1 (opensmppbox.c:function)
+2019-07-13 03:17:20 [2942] [1] DEBUG: Thread 1 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:17:20 [2942] [1] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:17:20 [2942] [1] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:17:20 [2942] [1] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:17:20 [2942] [1] ERROR: System error 111: Connection refused
+2019-07-13 03:17:20 [2942] [1] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:17:20 [2942] [1] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:17:20 [2942] [1] DEBUG: Thread 1 (opensmppbox.c:function) terminates.
+2019-07-13 03:17:30 [2942] [0] DEBUG: Started thread 2 (opensmppbox.c:function)
+2019-07-13 03:17:30 [2942] [2] DEBUG: Thread 2 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:17:30 [2942] [2] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:17:30 [2942] [2] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:17:30 [2942] [2] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:17:30 [2942] [2] ERROR: System error 111: Connection refused
+2019-07-13 03:17:30 [2942] [2] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:17:30 [2942] [2] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:17:30 [2942] [2] DEBUG: Thread 2 (opensmppbox.c:function) terminates.
+2019-07-13 03:17:40 [2942] [0] DEBUG: Started thread 3 (opensmppbox.c:function)
+2019-07-13 03:17:40 [2942] [3] DEBUG: Thread 3 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:17:40 [2942] [3] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:17:40 [2942] [3] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:17:40 [2942] [3] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:17:40 [2942] [3] ERROR: System error 111: Connection refused
+2019-07-13 03:17:40 [2942] [3] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:17:40 [2942] [3] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:17:40 [2942] [3] DEBUG: Thread 3 (opensmppbox.c:function) terminates.
+2019-07-13 03:17:50 [2942] [0] DEBUG: Started thread 4 (opensmppbox.c:function)
+2019-07-13 03:17:50 [2942] [4] DEBUG: Thread 4 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:17:50 [2942] [4] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:17:50 [2942] [4] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:17:50 [2942] [4] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:17:50 [2942] [4] ERROR: System error 111: Connection refused
+2019-07-13 03:17:50 [2942] [4] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:17:50 [2942] [4] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:17:50 [2942] [4] DEBUG: Thread 4 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:00 [2942] [0] DEBUG: Started thread 5 (opensmppbox.c:function)
+2019-07-13 03:18:00 [2942] [5] DEBUG: Thread 5 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:00 [2942] [5] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:00 [2942] [5] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:00 [2942] [5] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:00 [2942] [5] ERROR: System error 111: Connection refused
+2019-07-13 03:18:00 [2942] [5] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:00 [2942] [5] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:00 [2942] [5] DEBUG: Thread 5 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:10 [2942] [0] DEBUG: Started thread 6 (opensmppbox.c:function)
+2019-07-13 03:18:10 [2942] [6] DEBUG: Thread 6 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:10 [2942] [6] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:10 [2942] [6] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:10 [2942] [6] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:10 [2942] [6] ERROR: System error 111: Connection refused
+2019-07-13 03:18:10 [2942] [6] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:10 [2942] [6] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:10 [2942] [6] DEBUG: Thread 6 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:21 [2942] [0] DEBUG: Started thread 7 (opensmppbox.c:function)
+2019-07-13 03:18:21 [2942] [7] DEBUG: Thread 7 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:21 [2942] [7] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:21 [2942] [7] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:21 [2942] [7] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:21 [2942] [7] ERROR: System error 111: Connection refused
+2019-07-13 03:18:21 [2942] [7] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:21 [2942] [7] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:21 [2942] [7] DEBUG: Thread 7 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:31 [2942] [0] DEBUG: Started thread 8 (opensmppbox.c:function)
+2019-07-13 03:18:31 [2942] [8] DEBUG: Thread 8 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:31 [2942] [8] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:31 [2942] [8] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:31 [2942] [8] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:31 [2942] [8] ERROR: System error 111: Connection refused
+2019-07-13 03:18:31 [2942] [8] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:31 [2942] [8] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:31 [2942] [8] DEBUG: Thread 8 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:41 [2942] [0] DEBUG: Started thread 9 (opensmppbox.c:function)
+2019-07-13 03:18:41 [2942] [9] DEBUG: Thread 9 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:41 [2942] [9] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:41 [2942] [9] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:41 [2942] [9] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:41 [2942] [9] ERROR: System error 111: Connection refused
+2019-07-13 03:18:41 [2942] [9] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:41 [2942] [9] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:41 [2942] [9] DEBUG: Thread 9 (opensmppbox.c:function) terminates.
+2019-07-13 03:18:51 [2942] [0] DEBUG: Started thread 10 (opensmppbox.c:function)
+2019-07-13 03:18:51 [2942] [10] DEBUG: Thread 10 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:18:51 [2942] [10] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:18:51 [2942] [10] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:18:51 [2942] [10] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:18:51 [2942] [10] ERROR: System error 111: Connection refused
+2019-07-13 03:18:51 [2942] [10] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:18:51 [2942] [10] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:18:51 [2942] [10] DEBUG: Thread 10 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:01 [2942] [0] DEBUG: Started thread 11 (opensmppbox.c:function)
+2019-07-13 03:19:01 [2942] [11] DEBUG: Thread 11 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:01 [2942] [11] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:01 [2942] [11] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:01 [2942] [11] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:01 [2942] [11] ERROR: System error 111: Connection refused
+2019-07-13 03:19:01 [2942] [11] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:01 [2942] [11] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:01 [2942] [11] DEBUG: Thread 11 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:11 [2942] [0] DEBUG: Started thread 12 (opensmppbox.c:function)
+2019-07-13 03:19:11 [2942] [12] DEBUG: Thread 12 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:11 [2942] [12] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:11 [2942] [12] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:11 [2942] [12] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:11 [2942] [12] ERROR: System error 111: Connection refused
+2019-07-13 03:19:11 [2942] [12] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:11 [2942] [12] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:11 [2942] [12] DEBUG: Thread 12 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:22 [2942] [0] DEBUG: Started thread 13 (opensmppbox.c:function)
+2019-07-13 03:19:22 [2942] [13] DEBUG: Thread 13 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:22 [2942] [13] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:22 [2942] [13] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:22 [2942] [13] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:22 [2942] [13] ERROR: System error 111: Connection refused
+2019-07-13 03:19:22 [2942] [13] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:22 [2942] [13] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:22 [2942] [13] DEBUG: Thread 13 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:32 [2942] [0] DEBUG: Started thread 14 (opensmppbox.c:function)
+2019-07-13 03:19:32 [2942] [14] DEBUG: Thread 14 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:32 [2942] [14] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:32 [2942] [14] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:32 [2942] [14] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:32 [2942] [14] ERROR: System error 111: Connection refused
+2019-07-13 03:19:32 [2942] [14] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:32 [2942] [14] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:32 [2942] [14] DEBUG: Thread 14 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:42 [2942] [0] DEBUG: Started thread 15 (opensmppbox.c:function)
+2019-07-13 03:19:42 [2942] [15] DEBUG: Thread 15 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:42 [2942] [15] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:42 [2942] [15] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:42 [2942] [15] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:42 [2942] [15] ERROR: System error 111: Connection refused
+2019-07-13 03:19:42 [2942] [15] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:42 [2942] [15] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:42 [2942] [15] DEBUG: Thread 15 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:47 [2942] [0] DEBUG: Started thread 16 (opensmppbox.c:function)
+2019-07-13 03:19:47 [2942] [16] DEBUG: Thread 16 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:47 [2942] [16] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:47 [2942] [16] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:47 [2942] [16] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:47 [2942] [16] ERROR: System error 111: Connection refused
+2019-07-13 03:19:47 [2942] [16] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:47 [2942] [16] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:47 [2942] [16] DEBUG: Thread 16 (opensmppbox.c:function) terminates.
+2019-07-13 03:19:57 [2942] [0] DEBUG: Started thread 17 (opensmppbox.c:function)
+2019-07-13 03:19:57 [2942] [17] DEBUG: Thread 17 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:19:57 [2942] [17] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:19:57 [2942] [17] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:19:57 [2942] [17] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:19:57 [2942] [17] ERROR: System error 111: Connection refused
+2019-07-13 03:19:57 [2942] [17] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:19:57 [2942] [17] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:19:57 [2942] [17] DEBUG: Thread 17 (opensmppbox.c:function) terminates.
+2019-07-13 03:20:07 [2942] [0] DEBUG: Started thread 18 (opensmppbox.c:function)
+2019-07-13 03:20:07 [2942] [18] DEBUG: Thread 18 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:20:07 [2942] [18] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:20:07 [2942] [18] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:20:07 [2942] [18] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:20:07 [2942] [18] ERROR: System error 111: Connection refused
+2019-07-13 03:20:07 [2942] [18] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:20:07 [2942] [18] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:20:07 [2942] [18] DEBUG: Thread 18 (opensmppbox.c:function) terminates.
+2019-07-13 03:20:18 [2942] [0] DEBUG: Started thread 19 (opensmppbox.c:function)
+2019-07-13 03:20:18 [2942] [19] DEBUG: Thread 19 (opensmppbox.c:function) maps to pid 2942.
+2019-07-13 03:20:18 [2942] [19] INFO: Client connected from <103.106.31.122>
+2019-07-13 03:20:18 [2942] [19] DEBUG: Connecting to <127.0.0.1>
+2019-07-13 03:20:18 [2942] [19] ERROR: connect to <127.0.0.1> failed
+2019-07-13 03:20:18 [2942] [19] ERROR: System error 111: Connection refused
+2019-07-13 03:20:18 [2942] [19] ERROR: error connecting to server `localhost' at port `14009'
+2019-07-13 03:20:18 [2942] [19] ERROR: opensmppbox: Failed to connect to bearerbox.
+2019-07-13 03:20:18 [2942] [19] DEBUG: Thread 19 (opensmppbox.c:function) terminates.
+2019-07-13 03:20:20 [2942] [0] ERROR: SIGINT received, aborting program...
+2019-07-13 03:20:20 [2942] [0] INFO: No more waiting for SMPP connections.
+2019-07-13 03:20:20 [2942] [0] DEBUG: Immutable octet strings: 119.
