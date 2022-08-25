@@ -1,0 +1,21 @@
+body {
+	background: #fbfbfb;
+}
+div#menubar {
+  background: #1f834e;
+}
+/*.portlet {
+    background: #f8f8f8;
+    border: 1px solid #dedede;
+}*/
+#nav_sub {
+    border-bottom: 1px solid #ddd;
+}
+.menuxs {
+	background-color: #323a44!important;
+	border-color: #323a44!important;
+	border-radius: 0;
+}
+.um-upperdiv {
+    background: #e0e0e0 none repeat scroll 0% 0%;
+}

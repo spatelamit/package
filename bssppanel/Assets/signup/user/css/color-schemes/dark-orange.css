@@ -1,0 +1,12 @@
+body {
+	background: #eee;
+}
+div#menubar {
+    background: #ed4a29;
+}
+.portlet {
+	background: #fbfbfb;
+}
+#nav_sub {
+    border-bottom: 1px solid #ddd;
+}

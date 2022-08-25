@@ -1,0 +1,210 @@
+/*========spam-02==========*/
+a:hover ,a:focus {
+
+    text-decoration: none;
+
+}
+div#spam-02 {
+    padding: 15px;
+}
+
+.spam-02-list-item.inner-div,.spam-03-list-item.inner-div {
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 30px;
+    background-color: #FBFBFB;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    height: 220px;
+}
+
+.spam-02-list-item.inner-div h5,.spam-03-list-item.inner-div h5 {
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.spam-02-list-item.inner-div h5.s-id-clr,.spam-03-list-item.inner-div h5.s-id-clr {
+    color: #41ADE5;
+}
+
+.spam-02-list-item.inner-div p,.spam-03-list-item.inner-div p {
+    line-height: 1.7em;
+}
+
+.spam-02-list-item.inner-div:hover div.btndiv {
+    opacity: 1;
+    margin-left: 0px;
+}
+.spam-02-list-item.inner-div div.btndiv {
+    opacity: 0;
+    transition: all .2s ease;
+    margin-left: 40px;
+}
+/*=========spam-03============*/
+.spam-03-list-item.inner-div .btn {
+    background-color: #F1F1F1;
+    font-weight: 600;
+    border: 1px solid #DDD;
+}
+.spam-03-list-item.inner-div .btn:hover {
+    background-color: #3F3F3F;
+    color: #FFF;
+}
+/*=====new dlr=======*/
+section#dlr-table {
+    height: 365px;
+    width: 100%;
+    overflow: auto;
+}
+.tborder {
+    border: 1px solid #D7D4D4;
+}
+section#dlr-table .table > tbody > tr > td {
+    padding: 15px;
+    cursor: pointer;
+}
+div#dlr-content-auto {
+    width: 100%;
+    height: 245px;
+    overflow: auto;
+}
+/*===========user-mngmnt===============*/
+#searchnew {
+    padding: 13px 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #E3E3E3;
+}
+#user-mngmnt .navbar-default .navbar-nav > li > a {
+    /*padding: 32px 16px;*/
+}
+#user-mngmnt .navbar-default .navbar-nav > li:nth-child(even) {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+#user-mngmnt .navbar-default .navbar-nav > li.active > a {
+    color: #000;
+    background-color: transparent;
+    font-weight: 700;
+}
+#user-mngmnt .modal-dialog .form-control {
+    border-radius: 2px;
+    background-color: #efefef;
+    border-color: #e1e1e1;
+    box-shadow: none;
+}
+#user-mngmnt .modal-dialog label {
+    color: #5c5c5c;
+    font-size: 14px;
+}
+#user-mngmnt .modal-dialog .modal-header,.modal-footer {
+    background-color: #efefef;
+}
+#user-set-btn {
+    margin-top: 20px;
+}
+/*================spam trans==================*/
+#sp-tss .list-group-item{
+    background-color: #f9f9f9!important;
+    border: 1px solid #E7E3E3;
+    margin-bottom: 6px;
+}
+
+#sp-tss .list-group-item .btn-xs {
+    padding: 3px 7px;
+    margin-right: 5px;
+    margin-top: 2px;
+    text-transform: capitalize;
+}
+.bgf9 {
+    background-color: #f9f9f9!important;
+    border: 2px solid #E7E3E3;
+}
+.scroll {
+    max-height: 600px;
+    overflow: auto;
+}
+.scroll.tr {
+    max-height: 374px;
+}
+#sp-tss p {
+    font-size: 13px;
+}
+#sp-tss .col-lg-7 p {
+    line-height: 22px;
+    margin: 12px auto;
+}
+#sp-tss input {
+    border-color: #d8d8d8;
+    background-color: #FFF;
+    box-shadow: none;
+}
+#sp-tss .form-inline {
+    margin-bottom: 10px;
+}
+#sp-tss .form-inline .has-feedback .form-control-feedback {
+    line-height: 34px;
+    color: #a1a1a1;
+}
+#sp-tss .col-md-5 .btn {
+    border-radius: 4px;
+}
+.modal-dialog {
+    transform:scale(.7);
+    transition:all .3s;
+}
+.modal.in .modal-dialog {
+    transform: scale(1);
+}
+.dropdown-menu.width {
+    min-width: 209px !important;
+    padding: 15px;
+    background-color: #cecece;
+    border: 3px solid #FFF;
+}
+.pagination > .active > a,.pagination > .active > a:hover {
+    background-color: #474C50;
+    border-color: #656565;
+}
+.pagination > li > a, .pagination > li > span {
+    padding: 3px 8px;
+    margin-left: 4px;
+    color: #6B6B6B;
+}
+
+hr{
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+#show_user_tr_sms .input-group {
+    width: 118px;
+}
+.approve-sender {
+    padding: 1px 5px!important;
+}
+.border {
+    border-left: 1px solid #C9C9C9;
+    border-right: 1px solid #C9C9C9;
+}
+.msg-content {
+    color: #535353;
+}
+#sp-tss .popover{
+    right: 25px;
+}
+#fa-close i{
+    font-size: 35px;
+    color: #B6B6B6;
+}
+#fa-close:hover  i{
+    font-size: 35px;
+    color: #c5c5c5;
+}
+.visible-xs .input-group {
+    margin-bottom: 4px;
+}
+#show_all_transactionals{
+    height: 405px;
+    overflow: auto;    
+}
+.word-break {
+    word-break: break-all;
+}

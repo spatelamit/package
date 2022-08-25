@@ -1,0 +1,1317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>SQLBox User's Guide
+        </title>
+        <meta name="GENERATOR" content="Modular DocBook HTML Stylesheet Version 1.77">
+    </head>
+    <body class="BOOK" alink="#0000FF" bgcolor="#FFFFFF" link="#0000FF" text="#000000" vlink="#840084">
+        <div class="BOOK">
+            <a name="AEN1"></a>
+            <div class="TITLEPAGE">
+                <h1 class="TITLE"><a name="AEN2">sqlbox cvs-2008.11.03
+                        User's Guide</a>
+                </h1>
+                <h2 class="SUBTITLE">SQL-Based queue engine for Kannel</h2>
+                <h3 class="AUTHOR"><a name="AEN6"></a>Renee Kluwen</h3>
+                <div class="AFFILIATION">
+                    <span class="JOBTITLE">Sqlbox Author<br></span><span class="ORGNAME">Chimit<br></span>
+                    <div class="ADDRESS">
+                        <p class="ADDRESS">						<code class="EMAIL">&lt;<a href="mailto:rene.kluwen at chimit dot nl">rene.kluwen at chimit dot nl</a>&gt;</code><br>
+                            http://www.chimit.nl/<br>
+                        </p>
+                    </div>
+                </div>
+                <h3 class="AUTHOR"><a name="AEN15"></a>Martin Conte</h3>
+                <div class="AFFILIATION">
+                    <span class="JOBTITLE">Standalone Version and Patches<br></span>
+                    <div class="ADDRESS">
+                        <p class="ADDRESS">						<code class="EMAIL">&lt;<a href="mailto:reflejo at gmail dot com">reflejo at gmail dot com</a>&gt;</code><br>
+                        </p>
+                    </div>
+                </div>
+                <h3 class="AUTHOR"><a name="AEN22"></a>Alejandro Guerrieri</h3>
+                <div class="AFFILIATION">
+                    <span class="JOBTITLE">Maintainer, Documentation and Patches<br></span><span class="ORGNAME">Magicom<br></span>
+                    <div class="ADDRESS">
+                        <p class="ADDRESS">						<code class="EMAIL">&lt;<a href="mailto:aguerrieri at kannel dot org">aguerrieri at kannel dot org</a>&gt;</code><br>
+                            http://www.blogalex.com/<br>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="ABSTRACT">
+                        <a name="AEN31"></a>
+                        <p><b>Abstract</b></p>
+                        <p>This document describes how to install and use sqlbox, the
+                            SQL-Based queue engine for Kannel.
+                        </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="TOC">
+                <dl>
+                    <dt><b>Table of Contents</b></dt>
+                    <dt>1. <a href="#AEN38">Introduction</a></dt>
+                    <dd>
+                        <dl>
+                            <dt><a href="#AEN42">Overview</a></dt>
+                            <dt><a href="#AEN52">Features</a></dt>
+                            <dt><a href="#AEN62">Requirements</a></dt>
+                        </dl>
+                    </dd>
+                    <dt>2. <a href="#AEN81">Installing sqlbox</a></dt>
+                    <dd>
+                        <dl>
+                            <dt><a href="#AEN87">Getting the source code</a></dt>
+                            <dt><a href="#AEN92">Finding the documentation</a></dt>
+                            <dt><a href="#AEN108">Compiling sqlbox</a></dt>
+                            <dt><a href="#AEN153">Installing Sqlbox</a></dt>
+                            <dt><a href="#AEN164">Using pre-compiled binary packages</a></dt>
+                            <dd>
+                                <dl>
+                                    <dt><a href="#AEN167">Installing Sqlbox from RPM packages</a></dt>
+                                    <dt><a href="#AEN170">Installing Sqlbox from DEB packages</a></dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>3. <a href="#AEN173">Using sqlbox</a></dt>
+                    <dd>
+                        <dl>
+                            <dt><a href="#AEN177">Configuring Sqlbox</a></dt>
+                            <dd>
+                                <dl>
+                                    <dt><a href="#AEN181">Configuration file syntax</a></dt>
+                                    <dt><a href="#INCLUDES">Inclusion of configuration files</a></dt>
+                                    <dt><a href="#AEN211">Sqlbox configuration</a></dt>
+                                </dl>
+                            </dd>
+                            <dt><a href="#AEN289">The DB Connection</a></dt>
+                            <dd>
+                                <dl>
+                                    <dt><a href="#AEN297">Database Connection Configuration</a></dt>
+                                    <dt><a href="#AEN356">MySQL Storage</a></dt>
+                                    <dt><a href="#AEN362">PostgreSQL Storage</a></dt>
+                                </dl>
+                            </dd>
+                            <dt><a href="#AEN368">Running Sqlbox</a></dt>
+                            <dd>
+                                <dl>
+                                    <dt><a href="#AEN373">Starting the box</a></dt>
+                                    <dt><a href="#ARGUMENTS">Command line options</a></dt>
+                                    <dt><a href="#AEN473">Database Tables</a></dt>
+                                </dl>
+                            </dd>
+                            <dt><a href="#AEN478">Inserting MT messages by SQL</a></dt>
+                            <dd>
+                                <dl>
+                                    <dt><a href="#AEN484">Database Structure</a></dt>
+                                    <dt><a href="#AEN711">Example</a></dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>4. <a href="#BUG-REPORTING">Getting help and reporting bugs</a></dt>
+                    <dt>A. <a href="#UPGRADING-NOTES">Upgrading notes</a></dt>
+                    <dd>
+                        <dl>
+                            <dt><a href="#AEN729">Upgrading from different sqlbox versions</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </div>
+            <div class="LOT">
+                <dl class="LOT">
+                    <dt><b>List of Tables</b></dt>
+                    <dt>3-1. <a href="#AEN219">Sqlbox Group Variables</a></dt>
+                    <dt>3-2. <a href="#AEN299">Sqlbox Database connection configuration variables</a></dt>
+                    <dt>3-3. <a href="#AEN389">Sqlbox Command Line Options</a></dt>
+                    <dt>3-4. <a href="#AEN487">Sqlbox Database structure</a></dt>
+                </dl>
+            </div>
+            <div class="CHAPTER">
+                <hr>
+                <h1><a name="AEN38"></a>Chapter 1. Introduction</h1>
+                <div class="HIGHLIGHTS">
+                    <a name="AEN40"></a>
+                    <p>Sqlbox is a special Kannel box that sits between bearerbox and smsbox and
+                        uses a database queue to store and forward messages.
+                    </p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN42">Overview</a></h2>
+                    <p>Sqlbox behaves similar to other Kannel boxes and share a compatible configuration
+                        file format and command line options.
+                    </p>
+                    <p>It works between bearerbox and smsbox, intercept all messages and use a couple of database
+                        tables to process messages.
+                    </p>
+                    <p>Messages are queued on a configurable table (defaults to
+                        <tt class="LITERAL">send_sms</tt>) and moved to another table (defaults to <tt class="LITERAL">sent_sms</tt>)
+                        afterwards.
+                    </p>
+                    <p>You can also manually insert messages into the <tt class="LITERAL">send_sms</tt> table
+                        and they will be sent and moved to the <tt class="LITERAL">sent_sms</tt> table as well. This
+                        allows for fast and easy injection of large amounts of messages into
+                        kannel.
+                    </p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN52">Features</a></h2>
+                    <p>				</p>
+                    <p></p>
+                    <ul>
+                        <li>
+                            <p>Modular architecture: Easily integrates into Kannel infrastructure.</p>
+                        </li>
+                        <li>
+                            <p>Compatible configuration file format and command line arguments.</p>
+                        </li>
+                        <li>
+                            <p>Supports most Kannel features.</p>
+                        </li>
+                    </ul>
+                    <p></p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN62">Requirements</a></h2>
+                    <p>sqlbox is being developed on Linux and OSX systems, and
+                        should be fairly easy to export to other Unix-like systems. However,
+                        we don't yet support other platforms, due to lack of time, although
+                        it should be working without major problems on Windows (through
+                        Cygwin), Mac OSX, Solaris and FreeBSD. 
+                    </p>
+                    <p>				sqlbox requires the following software environment:
+                    </p>
+                    <p></p>
+                    <ul>
+                        <li>
+                            <p>Kannel libraries (gwlib) installed.</p>
+                        </li>
+                        <li>
+                            <p>C compiler and libraries for ANSI C, with normal Unix
+                                extensions such as BSD sockets and related tools. (GNU's GCC
+                                tool-chain is recommended)
+                            </p>
+                        </li>
+                        <li>
+                            <p>GNU Make.</p>
+                        </li>
+                        <li>
+                            <p>							An implementation of POSIX threads (
+                                <tt class="FILENAME">pthread.h</tt>
+                                ).
+                            </p>
+                        </li>
+                        <li>
+                            <p>							DocBook processing tools: DocBook style-sheets, jade, jadetex,
+                                etc; see
+                                <tt class="FILENAME">README</tt>
+                                , section `Documentation', for more information (pre-formatted
+                                versions of the documentation are available, and you can compile
+                                Sqlbox itself even without the documentation tools).
+                            </p>
+                        </li>
+                        <li>
+                            <p>GNU autoconf</p>
+                        </li>
+                    </ul>
+                    <p></p>
+                </div>
+            </div>
+            <div class="CHAPTER">
+                <hr>
+                <h1><a name="AEN81"></a>Chapter 2. Installing sqlbox</h1>
+                <p>This chapter explains how to build and install sqlbox from
+                    source or from a binary package. The goal of this chapter is to get
+                    the module compiled and all the files in the correct places; the next
+                    chapter will explain how to configure it.
+                </p>
+                <div class="NOTE">
+                    <blockquote class="NOTE">
+                        <p><b>Note: </b>				If you are upgrading from a previous version, please look at
+                            <a href="#UPGRADING-NOTES">Appendix A</a> for any important information.
+                        </p>
+                    </blockquote>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN87">Getting the source code</a></h2>
+                    <p>				The source code to Sqlbox is available for download at
+                        <a href="http://www.kannel.org/download.shtml" target="_top">http://www.kannel.org/download.shtml</a>
+                        . It is available in various formats and you can choose to download
+                        either the latest release version or the daily snapshot of the
+                        development source tree for the next release version, depending on
+                        whether you want to use Sqlbox for production use or to participate
+                        in the development.
+                    </p>
+                    <p>If you're serious about development, you probably want to use
+                        CVS, the version control system used by the Kannel project. This
+                        allows you to participate in Kannel development much more easily
+                        than by downloading the current daily snapshot and integrating any
+                        changes you've made every day. CVS does that for you. (See the
+                        Kannel web site for more information on how to use CVS.)
+                    </p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN92">Finding the documentation</a></h2>
+                    <p>				The documentation for Sqlbox consists of two parts:
+                    </p>
+                    <p></p>
+                    <ol type="1">
+                        <li>
+                            <p>							<i class="CITETITLE">User's Guide</i>
+                                , i.e., the one you're reading at the moment.
+                            </p>
+                        </li>
+                        <li>
+                            <p>							The
+                                <tt class="FILENAME">README</tt>
+                                and various other text files in the source tree.
+                            </p>
+                        </li>
+                    </ol>
+                    <p></p>
+                    <p>				You can also find general information on Kannel's
+                        <a href="http://www.kannel.org" target="_top">website</a>
+                        and information about existing problems at
+                        <a href="http://bugs.kannel.org" target="_top">our bugtracker</a>
+                        .
+                    </p>
+                    <p>				We intend to cover everything you need to install and use Sqlbox is
+                        in
+                        <i class="CITETITLE">User's Guide</i>
+                        , but the guide is still incomplete in this respect. The
+                        <tt class="FILENAME">README</tt>
+                        is not supposed to be very important, nor contain much information.
+                        Instead, it will just point at the other documentation.
+                    </p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN108">Compiling sqlbox</a></h2>
+                    <p>				If you are using Sqlbox on a supported platform, or one that is
+                        similar enough to one, compiling Sqlbox should be trivial. After you
+                        have unpacked the source package of your choose, or after you have
+                        checked out the source code from CVS, enter the following commands:
+                    </p>
+                    <pre class="SCREEN">					<kbd class="USERINPUT"> ./bootstrap ./configure make </kbd>
+                    </pre>
+                    The
+                    <tt class="FILENAME">bootstrap</tt>
+                    script uses autoconf to generate the files needed to build the
+                    module. The
+                    <tt class="FILENAME">configure</tt>
+                    script investigates various things on your computer for the Sqlbox
+                    compilation needs, and writes out the
+                    <tt class="FILENAME">Makefile</tt>
+                    used to compile the module.
+                    <b class="COMMAND">make</b>
+                    then runs the commands to actually compile it.
+                    <p></p>
+                    <p>				If either command writes out an error message and stops before it
+                        finishes its job, you have a problem, and you either need to fix it
+                        yourself, if you can, or report the problem to the Kannel project.
+                        See
+                        <a href="#BUG-REPORTING">Chapter 4</a> for details.
+                    </p>
+                    <p>				For detailed instruction on using the configuration script, see file
+                        <tt class="FILENAME">INSTALL</tt>
+                        . That file is a generic documentation for
+                        <b class="COMMAND">configure</b>
+                        . Sqlbox defines a few additional options:
+                    </p>
+                    <p></p>
+                    <ul>
+                        <li>
+                            <p>							<tt class="LITERAL">--with-kannel-dir=</tt>
+                                <tt class="REPLACEABLE"><i>DIR</i></tt>
+                                Where to look for Kannel Gateway libs and header files
+                                <tt class="REPLACEABLE"><i>DIR</i></tt>
+                                points to the Kannel installation directory. Defaults to
+                                <tt class="LITERAL">/usr/local</tt>
+                            </p>
+                        </li>
+                        <li>
+                            <p>							<tt class="LITERAL">--disable-docs (default is --enable-docs)</tt>
+                                Use this option if you don't have DocBook installed and/or you
+                                want to save some time and CPU cycles. Pre-generated
+                                documentation is available on Kannel's site. Default behavior is
+                                to build documentation, b.e., converting the User Guide from the
+                                DocBook markup language to PostScript and HTML if DocBook is
+                                available.
+                            </p>
+                        </li>
+                        <li>
+                            <p>							<tt class="LITERAL">--enable-drafts (default is
+                                    --disable-drafts)</tt>
+                                When building documentation, include the sections marked as
+                                <tt class="LITERAL">draft</tt>
+                                .
+                            </p>
+                        </li>
+                        <li>
+                            <p>							<tt class="LITERAL">--with-ctlib=</tt><tt class="REPLACEABLE"><i>DIR</i></tt>
+                                Include Ct-Lib support.
+                                <tt class="REPLACEABLE"><i>DIR</i></tt>
+                                is the Ct-Lib install directory, defaults to 
+                                <tt class="LITERAL">/opt/sybase</tt>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>							<tt class="LITERAL"> --with-freetds=</tt><tt class="REPLACEABLE"><i>DIR</i></tt>
+                                Include FreeTDS Ct-Lib support.
+                                <tt class="REPLACEABLE"><i>DIR</i></tt>
+                                is the FreeTDS install directory, defaults to 
+                                <tt class="LITERAL">/usr/local</tt>.
+                            </p>
+                        </li>
+                    </ul>
+                    <p></p>
+                    <p>				You may need to add compilations flags to configure:
+                    </p>
+                    <pre class="SCREEN">					<kbd class="USERINPUT">CFLAGS='-pthread' ./configure</kbd>
+                    </pre>
+                    The above, for instance, seems to be required on FreeBSD. If you
+                    want to develop Sqlbox, you probably want to add CFLAGS that make
+                    your compiler use warning messages. For example, for GCC:
+                    <pre class="SCREEN">					<kbd class="USERINPUT">CFLAGS='-Wall -O2 -g' ./configure</kbd>
+                    </pre>
+                    (You may, at your preference, use even stricter checking options.)
+                    <p></p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN153">Installing Sqlbox</a></h2>
+                    <p>				After you have compiled Kannel, you need to install the sqlbox binary
+                        in a suitable place. This is most easily done by using
+                        <b class="COMMAND">make</b> again:
+                    </p>
+                    <pre class="SCREEN">					<kbd class="USERINPUT">make bindir=<tt class="REPLACEABLE"><i>/path/to/directory</i></tt> install</kbd>
+                    </pre>
+                    Replace
+                    <tt class="REPLACEABLE"><i>/path/to/directory</i></tt>
+                    with the pathname of the actual directory where the programs should
+                    be installed. This install the sqlbox binary:
+                    <p></p>
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <td>						<tt class="FILENAME">gw/sqlbox</tt>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN164">Using pre-compiled binary packages</a></h2>
+                    <p>To be done</p>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN167">Installing Sqlbox from RPM packages</a></h3>
+                        <p>To be done</p>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN170">Installing Sqlbox from DEB packages</a></h3>
+                        <p>To be done</p>
+                    </div>
+                </div>
+            </div>
+            <div class="CHAPTER">
+                <hr>
+                <h1><a name="AEN173"></a>Chapter 3. Using sqlbox</h1>
+                <p>This chapter explains how to configure and run Sqlbox and also
+                    how to tell if it's running from Kannel's HTTP interface.
+                </p>
+                <p>There is only one configuration file for Sqlbox, and that file
+                    commands all aspects of its execution.
+                </p>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN177">Configuring Sqlbox</a></h2>
+                    <p>The configuration file can be divided into two parts:
+                        sqlbox configuration and database connection.
+                    </p>
+                    <p>Details of each part are in appropriate sections later on
+                        this documentation.
+                    </p>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN181">Configuration file syntax</a></h3>
+                        <p>The syntax used for the configuration file is the same used
+                            in Kannel. Skip this section if you are already familiar with it.
+                            Otherwise, keep on reading:
+                        </p>
+                        <p>					A configuration file consists of groups of configuration variables.
+                            Groups are separated by empty lines, and each variable is defined
+                            on its own line. Each group in Sqlbox configuration is
+                            distinguished with a group variable. Comments are lines that begin
+                            with a number sign (
+                            <tt class="LITERAL">#</tt>
+                            ) and are ignored (they don't, for example, separate groups of
+                            variables).
+                        </p>
+                        <p>					A variable definition line has the name of the variable, and equals
+                            sign (
+                            <tt class="LITERAL">=</tt>
+                            ) and the value of the variable. The name of the variable can
+                            contain any characters except whitespace and equals. The value of
+                            the variable is a string, with or without quotation marks (
+                            <tt class="LITERAL"></tt>
+                            ) around it. Quotation marks are needed if the variable needs to
+                            begin or end with whitespace or contain special characters. Normal
+                            C escape character syntax works inside quotation marks.
+                        </p>
+                        <p>					Perhaps an example will make things easier to comprehend:
+                        </p>
+                        <pre class="PROGRAMLISTING">01 # Sqlbox configuration
+02 group = sqlbox
+03 id = "my-sqlbox"
+04 smsbox-id = "sqlbox"
+...
+11 log-level = 0
+12 log-file = "/var/log/kannel/kannel-sqlbox.log"
+13
+14 #MySQL Connection
+15 group = mysql-connection
+16 id = "my-sqlbox"
+17 host = localhost
+...</pre>
+                        The above snippet defines an sqlbox instance with id <tt class="LITERAL">my-sqlbox</tt>
+                        that identifies with <tt class="LITERAL">bearerbox</tt> as <tt class="LITERAL">sqlbox</tt> and also
+                        sets the log-level and file location. It also defines a MySQL connection to localhost.
+                        <p></p>
+                        <p>Lines 1 and 14 are comment lines. Line 13 separates the two
+                            groups. The remaining lines define variables. The group type is
+                            defined by the group variable value.
+                        </p>
+                        <p>The various variables that are understood in each type of
+                            configuration group are explained below.
+                        </p>
+                        <p>					Some variable values are marked as <tt class="LITERAL">'bool'</tt>.
+                            The value for variable can be like true, false, yes, no, on, off,
+                            0 or 1. Other values are treated as 'true' while if the variable is
+                            not present at all, it is treated as being 'false'.
+                        </p>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="INCLUDES">Inclusion of configuration files</a></h3>
+                        <p>					A configuration file may contain a special directive called
+                            <tt class="LITERAL">include</tt>
+                            to include other file or a directory with files to the
+                            configuration processing.
+                        </p>
+                        <p>This allows to segment the specific configuration groups
+                            required for several services and boxes to different files and
+                            hence to have more control in larger setups.
+                        </p>
+                        <p>					Here is an example that illustrates the
+                            <tt class="LITERAL">include </tt>
+                            statement :
+                        </p>
+                        <pre class="PROGRAMLISTING">group = sqlbox
+id = my-sqlbox
+smsbox-id = sqlbox
+...
+log-file = "/var/log/kannel/kannel-sqlbox.log"
+log-level = 0
+include = "dbconn.conf"
+                        </pre>
+                        Above is the main
+                        <tt class="LITERAL">sqlbox.conf</tt>
+                        configuration file that includes the following
+                        <tt class="LITERAL">dbconn.conf</tt>
+                        file with all required directives for the database connection.
+                        <pre class="PROGRAMLISTING">group = mysql-connection
+id = my-sqlbox
+host = localhost
+username = myuser
+password = mypass
+database = kannel</pre>
+                        The above
+                        <tt class="LITERAL">include</tt>
+                        statement may be defined at any point in the configuration file and
+                        at any inclusion depth. Hence you can cascade numerous inclusions
+                        if necessary.
+                        <p></p>
+                        <p>At process start time inclusion of configuration files
+                            breaks if either the included file can not be opened and processed
+                            or the included file has been processed already in the stack and a
+                            recursive cycling has been detected.
+                        </p>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN211">Sqlbox configuration</a></h3>
+                        <p>					The configuration file
+                            <span class="emphasis"><i class="EMPHASIS">MUST</i></span>
+                            always include an 'sqlbox' group for general configuration. This
+                            group should be the first group in the configuration file.
+                        </p>
+                        <p>					As its simplest form, 'sqlbox' group looks like this:
+                        </p>
+                        <pre class="PROGRAMLISTING">group = sqlbox
+id = sqlbox
+bearerbox-port = 13001</pre>
+                        Naturally this is usually not sufficient for any real use. Thus, one or
+                        more of the optional configuration variables are used. In following
+                        list (as in any other similar lists), all mandatory variables are
+                        marked with <tt class="LITERAL">(m)</tt>, while conditionally mandatory
+                        (variables which must be set in certain cases) are marked with
+                        <tt class="LITERAL">(c)</tt>
+                        .
+                        <p></p>
+                        <div class="TABLE">
+                            <a name="AEN219"></a>
+                            <p><b>Table 3-1. Sqlbox Group Variables</b></p>
+                            <table frame="void" class="CALSTABLE" border="0">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Value</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">group (m)</tt>
+                                        </td>
+                                        <td>									<tt class="LITERAL">sqlbox</tt>
+                                        </td>
+                                        <td valign="BOTTOM"> This is a mandatory variable </td>
+                                    </tr>
+                                    <tr>
+                                        <td>                  <tt class="LITERAL">smsbox-id (m)</tt>
+                                        </td>
+                                        <td>string</td>
+                                        <td valign="BOTTOM">This is the box id.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>                  <tt class="LITERAL">global-sender</tt>
+                                        </td>
+                                        <td>number</td>
+                                        <td valign="BOTTOM">If no explicit number is given, this number is used when sending messages.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>                  <tt class="LITERAL">bearerbox-host (m)</tt>
+                                        </td>
+                                        <td>host-name</td>
+                                        <td valign="BOTTOM">This is the host where bearerbox is running.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">bearerbox-port (m)</tt>
+                                        </td>
+                                        <td>port-number</td>
+                                        <td valign="BOTTOM">This is the port number used to connect to bearerbox.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">smsbox-port (c)</tt>
+                                        </td>
+                                        <td>port-number</td>
+                                        <td valign="BOTTOM"> This is the port number to which the
+                                            smsboxes, if any, connect. This can be
+                                            anything you want. Must be set if you want to handle any SMS
+                                            traffic. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">smsbox-port-ssl (o)</tt>
+                                        </td>
+                                        <td>bool</td>
+                                        <td valign="BOTTOM"> If set to true, the smsbox connection
+                                            module will be SSL-enabled. Your smsboxes will have to connect
+                                            using SSL to sqlbox then. This is used to secure
+                                            communication between sqlbox and smsboxes in case they are
+                                            in separate networks operated and the TCP communication is not
+                                            secured on a lower network layer. Defaults to "no". 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>                  <tt class="LITERAL">sql-log-table</tt>
+                                        </td>
+                                        <td>table-name</td>
+                                        <td valign="BOTTOM">Indicates the table where messages are copied after being sent.
+                                            Defaults to <tt class="LITERAL">sent_sms</tt>.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>                  <tt class="LITERAL">sql-insert-table</tt>
+                                        </td>
+                                        <td>table-name</td>
+                                        <td valign="BOTTOM">Indicates the table where messages should be inserted to sent.
+                                            Defaults to <tt class="LITERAL">send_sms</tt>.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">log-file</tt>
+                                        </td>
+                                        <td>filename</td>
+                                        <td valign="BOTTOM">									A file in which to write a log. This in addition to
+                                            <tt class="LITERAL">stdout</tt>
+                                            and any log file defined in command line.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>									<tt class="LITERAL">log-level</tt>
+                                        </td>
+                                        <td>number 0..5</td>
+                                        <td valign="BOTTOM"> Minimum level of log-file events logged. 0
+                                            is for 'debug', 1 'info', 2 'warning, 3 'error' and 4 'panic'
+                                            (see Command Line Options) 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>A sample more complex 'sqlbox' group could be something like
+                            this:
+                        </p>
+                        <pre class="PROGRAMLISTING">group = sqlbox
+id = sqlbox-db
+smsbox-id = sqlbox
+#global-sender = ""
+bearerbox-host = localhost
+bearerbox-port = 13001
+smsbox-port = 13005
+smsbox-port-ssl = false
+sql-log-table = sent_sms
+sql-insert-table = send_sms
+log-file = "/var/log/kannel/kannel-sqlbox.log"
+log-level = 0</pre>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN289">The DB Connection</a></h2>
+                    <p><tt class="LITERAL">sqlbox</tt> needs a connection to a supported DB engine to operate.
+                        This connection is established at startup time and kept open until the box stops.
+                    </p>
+                    <p>At the moment, <tt class="LITERAL">sqlbox</tt> only supports MySQL and PostgreSQL, with
+                        support for other engines being planned.
+                    </p>
+                    <p>The process of configuring a DB connection is simple: You need to create a
+                        <tt class="LITERAL">[engine]-connection</tt> section (where [engine] is the DB engine name, either
+                        mysql or pgsql) and indicate a few parameters needed to establish the DB connection.
+                    </p>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN297">Database Connection Configuration</a></h3>
+                        <div class="TABLE">
+                            <a name="AEN299"></a>
+                            <p><b>Table 3-2. Sqlbox Database connection configuration variables</b></p>
+                            <table frame="void" class="CALSTABLE" border="0">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Variable</th>
+                                        <th>Value</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><tt class="LITERAL">group</tt></td>
+                                        <td><tt class="LITERAL">mysql-connection</tt></td>
+                                        <td valign="BOTTOM">			       This is a mandatory variable if we're connecting to a MySQL database.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">group</tt></td>
+                                        <td><tt class="LITERAL">pgsql-connection</tt></td>
+                                        <td valign="BOTTOM">			       This is a mandatory variable if we're connecting to a PostgreSQL database. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">id (m)</tt></td>
+                                        <td><tt class="LITERAL">string</tt></td>
+                                        <td valign="BOTTOM">			       An id to identify which external connection should be used for
+                                            Sqlbox storage. Any string is acceptable, but semicolon ';' may cause
+                                            problems, so avoid it and any other special non-alphabet characters.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">host (m)</tt></td>
+                                        <td><tt class="LITERAL">string</tt></td>
+                                        <td valign="BOTTOM">			        The hostname where the DB engine is running.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">username (m)</tt></td>
+                                        <td><tt class="LITERAL">string</tt></td>
+                                        <td valign="BOTTOM">			        The username used to connect to the DB engine.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">password (m)</tt></td>
+                                        <td><tt class="LITERAL">string</tt></td>
+                                        <td valign="BOTTOM">			        The password used to connect to the DB engine.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">database (m)</tt></td>
+                                        <td><tt class="LITERAL">string</tt></td>
+                                        <td valign="BOTTOM">			        The database name to use to store the data.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">max-connections</tt></td>
+                                        <td><tt class="LITERAL">number</tt></td>
+                                        <td valign="BOTTOM">			        Create a pool with this number of connections open.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN356">MySQL Storage</a></h3>
+                        <p>Uses a MySQL database to store the data. You need to specify the <tt class="LITERAL">mysql-connection</tt>
+                            group.
+                        </p>
+                        <p>Here is an example configuration:</p>
+                        <pre class="PROGRAMLISTING">group = mysql-connection
+id = my-sqlbox
+host = localhost
+username = foo
+password = bar
+database = kannel
+max-connections = 1</pre>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN362">PostgreSQL Storage</a></h3>
+                        <p>Uses a PostgreSQL database to store the data. You need to specify the <tt class="LITERAL">pgsql-connection</tt>
+                            group.
+                        </p>
+                        <p>Here is an example configuration:</p>
+                        <pre class="PROGRAMLISTING">group = pgsql-connection
+id = pg-sqlbox
+host = localhost
+username = foo
+password = bar
+database = kannel
+max-connections = 1</pre>
+                    </div>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN368">Running Sqlbox</a></h2>
+                    <p>You need to start <tt class="LITERAL">sqlbox</tt> after starting
+                        the <tt class="LITERAL">bearerbox</tt>, otherwise it won't have a port
+                        open to connect to. The preferred way to do this is to include
+                        sqlbox into your Kannel's startup script.
+                    </p>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN373">Starting the box</a></h3>
+                        <p>If you want to start it from command line (for testing, for
+                            example), give the following command:
+                        </p>
+                        <pre class="SCREEN"><kbd class="USERINPUT">	/path/to/sqlbox -v 1 [config-file]
+	</kbd></pre>
+                        The <code class="OPTION">-v 1</code> sets the logging level to
+                        <tt class="LITERAL">INFO</tt>. This way, you won't see a large amount of
+                        debugging output (the default is <tt class="LITERAL">DEBUG</tt>). Full
+                        explanation of Sqlbox command line arguments is below.
+                        <p></p>
+                        <p><span class="emphasis"><i class="EMPHASIS">[config-file]</i></span> is the name of the
+                            configuration file you are using with Sqlbox. The basic distribution
+                            packet comes with a sample configuration file you can use with some
+                            minor tweakings (check on the <tt class="LITERAL">/examples</tt> folder.
+                            Feel free to edit the file to suit your needs.
+                        </p>
+                        <p>Of course you need to have the <tt class="LITERAL">bearerbox</tt> running
+                            before starting the box. Without the bearer box, sqlbox won't even start.
+                        </p>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="ARGUMENTS">Command line options</a></h3>
+                        <p>Sqlbox accept certain command line options
+                            and arguments when they are launched. These arguments are:
+                        </p>
+                        <div class="TABLE">
+                            <a name="AEN389"></a>
+                            <p><b>Table 3-3. Sqlbox Command Line Options</b></p>
+                            <table frame="void" class="CALSTABLE" border="0">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td><tt class="LITERAL">-v &lt;level&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Set verbosity level for stdout (screen) logging. Default is 0,
+                                            which means 'debug'. 1 is 'info, 2 'warning', 3
+                                            'error' and 4 'panic'
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--verbosity &lt;level&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-D &lt;places&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Set debug-places for 'debug' level output.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--debug &lt;places&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-F &lt;file-name&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">              Log to file named file-name, too. Does not overrun or
+                                            affect any log-file defined in configuration file.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--logfile &lt;file-name&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-V &lt;level&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">            Set verbosity level for that extra log-file (default 0,
+                                            which means 'debug'). Does not affect verbosity level of
+                                            the log-file defined in configuration file, not verbosity
+                                            level of the <tt class="LITERAL">stdout</tt> output.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--fileverbosity &lt;level&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-H</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Only try to open HTTP sendsms interface; if it
+                                            fails, only warn about that, do not exit. (smsbox only)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--tryhttp</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-g</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Dump all known config groups and config keys to stdout
+                                            and exit.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--generate</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-u &lt;username&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Change process user-id to the given.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--user &lt;username&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-p &lt;filename&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Write process PID to the given file.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--pid-file &lt;filename&gt;</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-d</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Start process as daemon (detached from a current shell session).
+                                            Note: Process will change CWD (Current working directory) to <tt class="LITERAL">/</tt>,
+                                            therefore you should ensure that all paths to binary/config/config-includes are
+                                            absolute instead of relative.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--daemonize</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-P</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Start watcher process. This process watch a child process and if child process
+                                            crashed will restart them automatically.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--parachute</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">-X &lt;scriptname&gt;</tt></td>
+                                        <td rowspan="2" valign="BOTTOM">             Execute a given shell script or binary when child process crash detected. This option
+                                            is usable only with <tt class="LITERAL">--parachute/-P</tt>.
+                                            Script will be executed with 2 arguments:
+                                            scriptname 'processname' 'respawn-count'.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">--panic-script &lt;scriptname&gt;</tt></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN473">Database Tables</a></h3>
+                        <p>Sqlbox creates it's DB tables on the fly if the tables are not present at that moment. If you're
+                            upgrading from a previous version, or happen to have tables with the same names as the ones Sqlbox
+                            uses, but having a different structure, this will probably cause problems and there's a good chance the
+                            process will panic and stop. In that case, rename/drop the offending tables or change the names Sqlbox
+                            uses by using the <tt class="LITERAL">sql-log-table</tt> and <tt class="LITERAL">sql-insert-table</tt> variables.
+                        </p>
+                    </div>
+                </div>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN478">Inserting MT messages by SQL</a></h2>
+                    <p>One of the nice features Sqlbox provides is the ability to insert MT messages into Kannel's queue by
+                        inserting rows into the <tt class="LITERAL">send_sms</tt> table. Keep in mind that both tables have the same schema,
+                        but you only need to care about <tt class="LITERAL">send_sms</tt>. Sqlbox will move messages to the
+                        <tt class="LITERAL">sent_sms</tt> table autmatically after processing it.
+                    </p>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN484">Database Structure</a></h3>
+                        <p>The tables structure is as follows:</p>
+                        <div class="TABLE">
+                            <a name="AEN487"></a>
+                            <p><b>Table 3-4. Sqlbox Database structure</b></p>
+                            <table frame="void" class="CALSTABLE" border="0">
+                                <colgroup>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Type</td>
+                                        <td>Description</td>
+                                        <td>sendsms equivalent</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">sql_id</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">        This is the auto-incremented PRIMARY KEY and should be always left alone. Set it to NULL or do not
+                                            include it in your INSERT query.
+                                        </td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">momt</tt></td>
+                                        <td><tt class="LITERAL">ENUM('MO', 'MT')</tt></td>
+                                        <td valign="BOTTOM">        Specifies if the message is either MO or MT. You should always use "MT" here.
+                                        </td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">sender</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(20)</tt></td>
+                                        <td valign="BOTTOM">        Phone number of the sender. If this variable is not
+                                            set, sqlbox <tt class="LITERAL">global-sender</tt> is used.
+                                        </td>
+                                        <td>from</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">receiver</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(20)</tt></td>
+                                        <td valign="BOTTOM">        Phone number of the receiver.
+                                        </td>
+                                        <td>to</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">msgdata</tt></td>
+                                        <td><tt class="LITERAL">TEXT</tt></td>
+                                        <td valign="BOTTOM">        Contents of the message, URL encoded as necessary. The content
+                                            can be more than 160 characters, but then Kannel's
+                                            <tt class="LITERAL">sendsms-user</tt> group must have
+                                            <tt class="LITERAL">max-messages</tt> set more than 1.
+                                        </td>
+                                        <td>text</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">udhdata</tt></td>
+                                        <td><tt class="LITERAL"><tt class="LITERAL">BLOB</tt></tt></td>
+                                        <td valign="BOTTOM">         Optional User Data Header (UDH) part of the message. Must be
+                                            URL encoded.
+                                        </td>
+                                        <td>udh</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">time</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         An integer timestamp. You can uses UNIX_TIMESTAMP() on MySQL or any similar function here. You
+                                            can also leave the field empty/alone if you don't care about having a timestamp on your messages.
+                                        </td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">smsc_id</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">        Optional virtual smsc-id from which the message is supposed to 
+                                            have arrived. This is used for routing purposes, if any denied
+                                            or preferred SMS centers are set up in SMS center
+                                            configuration. This variable can be overridden on Kannel with a
+                                            <tt class="LITERAL">forced-smsc</tt> configuration
+                                            variable. Likewise, the <tt class="LITERAL">default-smsc</tt> variable
+                                            can be used to set the SMSC if it is not set otherwise.
+                                        </td>
+                                        <td>smsc</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">service</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">  Optional. Service name from which the message is supposed to have arrived.
+                                            This field is logged as SVC in the log file so it allows you to do some
+                                            accounting on it if your front end uses the same username for all services
+                                            but wants to distinguish them in the log.
+                                        </td>
+                                        <td>smsc</td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">account</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">  Optional. Account name or number to carry forward for billing purposes.
+                                            This field is logged as ACT in the log file so it allows you to do some
+                                            accounting on it if your front end uses the same username for all services
+                                            but wants to distinguish them in the log. In the case of a HTTP SMSC
+                                            type the account name is prepended with the service-name (username) and a colon (:)
+                                            and forwarded to the next instance of Kannel. This allows hierarchical accounting.
+                                        </td>
+                                        <td><tt class="LITERAL">account</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">id</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">  Kannel's internal message identifier. This have no meaning when you're inserting your
+                                            own messages, since Kannel doesn't have an identifier on your message yet. Leave it alone.
+                                        </td>
+                                        <td><tt class="LITERAL">-</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">sms_type</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">  A numeric value indicating if it's an MO, MT or DLR message. ALWAYS INSERT A "2" HERE (Meaning: MT), OTHERWISE KANNEL'S QUEUE WILL
+                                            GET CORRUPTED IF YOU RESTART IT AND YOU HAVE PENDING MESSAGES.
+                                        </td>
+                                        <td><tt class="LITERAL">-</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">mclass</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. Sets the Message Class in DCS field.
+                                            Accepts values between 0 and 3, for Message Class 0 to 3, 
+                                            A value of 0 sends the message directly to display, 1 sends
+                                            to mobile, 2 to SIM and 3 to SIM toolkit.
+                                        </td>
+                                        <td><tt class="LITERAL">mclass</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">mwi</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. Sets Message Waiting Indicator bits in DCS field.
+                                            If given, the message will be encoded as a Message Waiting
+                                            Indicator. The accepted values are 0,1,2 and 3 for activating the
+                                            voice, fax, email and other indicator, or 4,5,6,7 for deactivating,
+                                            respectively.
+                                            <a name="MWI-MESSAGES" href="#FTN.MWI-MESSAGES"><span class="footnote">[a]</span></a>
+                                        </td>
+                                        <td><tt class="LITERAL">mwi</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">coding</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. Sets the coding scheme bits in DCS field.
+                                            Accepts values 0 to 2, for 7bit, 8bit or UCS-2.
+                                            If unset, defaults to 7 bits unless a udh is defined, which sets
+                                            coding to 8bits.
+                                        </td>
+                                        <td><tt class="LITERAL">coding</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">compress</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. Sets the Compression bit in DCS Field.
+                                        </td>
+                                        <td><tt class="LITERAL">compress</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">validity</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. If given, Kannel will inform SMS Center that it should only
+                                            try to send the message for this many minutes. If the destination
+                                            mobile is off other situation that it cannot receive the sms, the
+                                            smsc discards the message.
+                                            Note: you must have your Kannel box time synchronized with the SMS Center.
+                                        </td>
+                                        <td><tt class="LITERAL">validity</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">deferred</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">         Optional. If given, the SMS center will postpone the message to be
+                                            delivered at now plus this many minutes.
+                                            Note: you must have your Kannel box time synchronized with the SMS Center.
+                                        </td>
+                                        <td><tt class="LITERAL">deferred</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">dlr-mask</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">     Optional. Request for delivery reports with the state of the sent 
+                                            message. The value is a bit mask composed of: 1: Delivered to phone, 
+                                            2: Non-Delivered to Phone, 4: Queued on SMSC, 8: Delivered to SMSC, 
+                                            16: Non-Delivered to SMSC. Must set <tt class="LITERAL">dlr-url</tt> on 
+                                            <tt class="LITERAL">sendsms-user</tt> group or use the 
+                                            sendsms <tt class="LITERAL">dlr-url</tt> variable or Sqlbox column. 
+                                        </td>
+                                        <td><tt class="LITERAL">dlr-mask</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">dlr-url</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">     Optional. If <tt class="LITERAL">dlr-mask</tt> is given, this is the url to
+                                            be fetched. (Must be url-encoded)
+                                        </td>
+                                        <td><tt class="LITERAL">dlr-url</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">pid</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">     Optional. Sets the PID value. (See ETSI Documentation).
+                                            Ex: SIM Toolkit messages would use something like 
+                                            <tt class="LITERAL">pid=127, coding=1, alt-dcs=1, mclass=3</tt>
+                                        </td>
+                                        <td><tt class="LITERAL">pid</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">alt-dcs</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">     Optional. If unset, Kannel uses the alt-dcs defined on smsc configuration,
+                                            or 0X per default. If equals to 1, uses FX. If equals to 0, force 0X.
+                                        </td>
+                                        <td><tt class="LITERAL">alt-dcs</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">rpi</tt></td>
+                                        <td><tt class="LITERAL">BIGINT(20)</tt></td>
+                                        <td valign="BOTTOM">     Optional. Sets the Return Path Indicator (RPI) value. (See ETSI Documentation).
+                                        </td>
+                                        <td><tt class="LITERAL">rpi</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">charset</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">        Charset of text message. Used to convert to a format suitable for
+                                            7 bits or to UCS-2. Defaults to WINDOWS-1252 if coding is 7bits and
+                                            UTF-16BE if coding is UCS-2.
+                                        </td>
+                                        <td><tt class="LITERAL">charset</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">boxc_id</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">        The bearerbox ID that should handle this message. You can usually leave this
+                                            one alone.
+                                        </td>
+                                        <td><tt class="LITERAL">charset</tt></td>
+                                    </tr>
+                                    <tr>
+                                        <td><tt class="LITERAL">binfo</tt></td>
+                                        <td><tt class="LITERAL">VARCHAR(255)</tt></td>
+                                        <td valign="BOTTOM">  Optional. Billing identifier/information proxy field used to pass arbitrary
+                                            billing transaction IDs or information to the specific SMSC modules. For EMI2 this
+                                            is encapsulated into the XSer 0c field, for SMPP this is encapsulated into the 
+                                            service_type of the submit_sm PDU.
+                                        </td>
+                                        <td><tt class="LITERAL">binfo</tt></td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">Notes:<br><a name="FTN.MWI-MESSAGES">a. </a>To set number of messages, use
+                                            <tt class="LITERAL">mwi=[0-3]&amp;coding=0&amp;udh=%04%01%02%&lt;XX&gt;%&lt;YY&gt;</tt>,
+                                            where YY are the number of messages, in HEX, and XX are <tt class="LITERAL">mwi</tt>
+                                            plus 0xC0 if <tt class="LITERAL">text</tt> field is not empty.<br>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="SECT2">
+                        <hr>
+                        <h3 class="SECT2"><a name="AEN711">Example</a></h3>
+                        <p>As when you're using the <tt class="LITERAL">sendsms</tt> interface, you don't need to specify
+                            all the columns in order to succesfully enqueue a message.
+                        </p>
+                        <p>Here's an example query you can use to send a simple message using Sqlbox:</p>
+                        <pre class="PROGRAMLISTING">INSERT INTO send_sms (
+  momt, sender, receiver, msgdata, sms_type
+) VALUES (
+  'MT', '1234', '1234567890', 'Hello world', 2
+);</pre>
+                        <p>The former example would send a message with text "Hello world" to number "1234567890".
+                            If possible, the sender would be set to "1234".
+                        </p>
+                        <p>You can add other parameters to specify routing, charset encoding and any other settings
+                            your setup may require. Just remember, try to keep it simple whenever possible
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="CHAPTER">
+                <hr>
+                <h1><a name="BUG-REPORTING"></a>Chapter 4. Getting help and reporting bugs</h1>
+                <p>This chapter explains where to find help with problems
+                    related to the gateway, and the preferred procedure for reporting
+                    bugs and sending corrections to them.
+                </p>
+                <p>The Kannel development mailing list is devel@kannel.org.  To subscribe, send mail to <a href="mailto:devel-subscribe@kannel.org" target="_top">devel-subscribe@kannel.org</a>.
+                    This is currently the best location for asking help and reporting
+                    bugs. Please include configuration file and version number.
+                </p>
+            </div>
+            <div class="APPENDIX">
+                <hr>
+                <h1><a name="UPGRADING-NOTES"></a>Appendix A. Upgrading notes</h1>
+                <p>This appendix includes pertinent information about required
+                    changes on upgrades.
+                </p>
+                <p>As a general rule, always check the <tt class="LITERAL">ChangeLog</tt> file
+                    before upgrading, because it may contain important information worth knowing
+                    before making any changes.
+                </p>
+                <div class="SECT1">
+                    <hr>
+                    <h2 class="SECT1"><a name="AEN729">Upgrading from different sqlbox versions</a></h2>
+                    <p>Sqlbox is a simple module that usually upgrades easily and without requiring any other changes.</p>
+                    <p>In some cases, a change on the DB structure takes place and this requires changes on the DB schemas as well.
+                        Since <tt class="LITERAL">sqlbox</tt> automatically generates its tables, the best approach for this kind of upgrades is
+                        to make sure that there's no messages pending, backup the tables contents (if there's no messages pending only the
+                        <tt class="LITERAL">sent_sms</tt> table will have records), drop the tables and let <tt class="LITERAL">sqlbox</tt> create the
+                        tables again. Alternatively you can check what changes are necessary and ALTER the tables yourself.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

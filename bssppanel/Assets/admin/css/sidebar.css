@@ -1,0 +1,153 @@
+.main-navbar {
+    position: relative;
+    color: white;
+    z-index: 10;
+}
+
+.main-navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 42px;
+}
+
+.main-navbar-content {
+    padding: 4px 16px;
+}
+
+.main-content {
+    position: relative;
+    margin-top: 42px;
+    padding: 1em;
+}
+
+.section {
+    margin: 1em auto;
+    margin-bottom: 3em !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 10px;
+    font-size: 22px;
+    top: 6px;
+}
+
+.icon img {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.main-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #0B1319;
+    color: white;
+    width: 250px;
+}
+
+.main-sidebar a:link {
+    color: #ffffff;
+}
+
+.main-sidebar a:visited {
+    color: #ffffff;
+}
+
+.main-sidebar a:hover {
+    color: #ffffff;
+}
+
+.main-sidebar a:active {
+    color: #ffffff;
+}
+
+.main-sidebar .section {
+    margin: 1em 0;
+    margin-bottom: 2em !important;
+}
+
+.main-sidebar-right {
+    right: 0;
+}
+
+.main-sidebar-left {
+    left: 0;
+    text-align: left;
+}
+
+[data-ssbplugin="sbwrapper"] {
+    padding: 1em;
+}
+
+.dynamic-right .main-navbar-content {
+    float: right;
+}
+
+.dynamic-left .main-navbar-content {
+    float: left;
+}
+
+.main-sidebar-wrapper {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-sidebar-wrapper ul{
+    padding:0 20px;
+}
+
+.popover{
+    z-index: 3050;
+}
+
+.main-sidebar ul li{
+    padding:8px 0;
+}
+
+.main-sidebar ul li a {
+    font-size: 14px;
+}
+
+.main-sidebar ul li i.active{
+    color: #12BC56;
+}
+@media only screen  and (max-width : 768px) { 
+    .icon {
+        right: 34px;
+    }
+}
+
+
+.icon1 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 60px;
+    font-size: 22px;
+    top: 6px;
+}
+
+.icon2 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 110px;
+    font-size: 22px;
+    top: 6px;
+}

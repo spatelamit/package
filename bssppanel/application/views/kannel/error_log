@@ -1,0 +1,2 @@
+[26-Sep-2016 05:51:24 UTC] PHP Warning:  require(APPPATH/libraries/xmlfunc.php): failed to open stream: No such file or directory in /home/bulksms/public_html/application/views/kannel/monitor.php on line 13
+[26-Sep-2016 05:51:24 UTC] PHP Fatal error:  require(): Failed opening required 'APPPATH/libraries/xmlfunc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/bulksms/public_html/application/views/kannel/monitor.php on line 13

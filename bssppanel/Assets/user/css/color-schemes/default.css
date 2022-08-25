@@ -1,0 +1,10 @@
+div#menubar {
+  background: #143A66;
+  background: -moz-linear-gradient(top, #143a66 0%, #1a5b90 100%, #155185 100%, #2481c8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#143A66), color-stop(100%,#1A5B90), color-stop(100%,#155185), color-stop(100%,#2481C8));
+  background: -webkit-linear-gradient(top, #143A66 0%,#1A5B90 100%,#155185 100%,#2481C8 100%);
+  background: -o-linear-gradient(top, #143a66 0%,#1a5b90 100%,#155185 100%,#2481c8 100%);
+  background: -ms-linear-gradient(top, #143a66 0%,#1a5b90 100%,#155185 100%,#2481c8 100%);
+  background: linear-gradient(to bottom, #143A66 0%,#1A5B90 100%,#155185 100%,#2481C8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#143a66', endColorstr='#2481c8',GradientType=0 );
+}
